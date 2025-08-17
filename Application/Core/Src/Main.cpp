@@ -6,7 +6,8 @@
  */
 
 /* Includes ------------------------------------------------------------------*/
-#include <iostream>
+#include <QtWidgets/QApplication>
+#include "Widgets/MainWindow.h"
 
 /**
  * Главная функция приложения
@@ -15,6 +16,10 @@
  * @return int - Результат выполнения приложения
  */
 int main(int argc, char** argvs) {
-    std::cout << "Hello World!\n" << std::endl;
-    return EXIT_SUCCESS;
+    auto app = QApplication(argc, argvs);
+
+    auto wnd = AtfGuiCoreApplication::MainWindow();
+
+    const auto result = QApplication::exec();
+    return result;
 }
